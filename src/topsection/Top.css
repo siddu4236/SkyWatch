@@ -1,6 +1,6 @@
 /* Top Section */
 .toper {
-  position: absolute;
+  position: fixed;
   top: 0;
   display: flex;
   width: 100%;
