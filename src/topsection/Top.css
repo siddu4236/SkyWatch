@@ -1,0 +1,125 @@
+/* Top Section */
+.toper {
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3.2vh;
+  padding-right: 3.2vh;
+  margin-top: 1.5vh;
+  z-index: 1;
+  
+}
+
+.toper img {
+  transform: translateY(-0.5vh);
+  margin-right: 10px;
+}
+a{
+  text-decoration: none;
+}
+.toper h1 {
+  margin-left: 0.7vh;
+  color: white;
+  
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  margin: 0;
+}
+
+.searcher {
+  display: flex;
+  align-items: center;
+  border-radius: 99px;
+  background: rgba(0, 0, 0, 0.15);
+  border: 0.3vh solid transparent;
+  transition: 0.25s border;
+}
+
+
+.searcher:focus-within {
+  border: 0.3vh solid rgba(255, 255, 255, 0.5);
+}
+.searcher:hover {
+  border: 0.3vh solid rgba(255, 255, 255, 0.5);
+}
+
+.inputer {
+  width: 60vw;
+  height: 4vh;
+  padding: 0.9vh 1.5vh;
+  border-radius: 99px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: transparent;
+  outline: none;
+  font-weight: 500;
+  padding-right: 0.5vh;
+  padding-left: 3vh;
+  border: none;
+  font-size: 2vh;
+  color: white;
+}
+
+.inputer::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+.inputerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-right: 1.5vh;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+.inputerBtn img {
+  height: 2.5vh;
+  transform: translateY(0.1vh);
+}
+
+
+.currbtn {
+  height: 4.5vh;
+  width: 25vh;
+  border-radius: 99px;
+  border: 0.3vh solid transparent;
+  background: rgba(0, 0, 0, 0.15);
+  outline: none;
+  font-size: 2vh;
+  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.currbtn i {
+  margin-right: 1vh;
+  
+}
+
+.currbtn:hover {
+  border: 0.3vh solid rgba(255, 255, 255, 0.5);
+}
+
+.currbtn:focus {
+  border: 0.3vh solid rgba(255, 255, 255, 0.5);
+}

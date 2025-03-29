@@ -1,0 +1,7 @@
+.core { 
+       
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* This ensures it takes the full viewport height */
+}
