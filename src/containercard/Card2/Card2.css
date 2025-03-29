@@ -1,0 +1,75 @@
+.wholeCard1 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+    background: linear-gradient( to top , rgb(0, 0, 0, 0.15), rgb(255, 255, 255, 0.15));
+    border-radius: 12px;
+    backdrop-filter: blur(10px) ;
+}
+
+.now {
+    height: 100px;
+}
+
+.clouds {
+    display: flex;
+}
+
+.clouds img {
+    height: 87.5px;
+}
+
+.now-now {
+    margin: 0;
+    padding-left: 18.75px;
+}
+
+.clouds p {
+    display: flex;
+    margin: 0;
+    font-size: 62.5px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 18.75px;
+}
+
+p span {
+    margin: 0;
+    font-size: 50px;
+}
+
+p img {
+    position: relative;
+    transform: translateY(-12.5px);
+    margin-right: 6.25px;
+}
+
+.Type-weather {
+    height: 31.25px;
+    margin: 0;
+    margin-left: 18.75px;
+    margin-right: 18.75px;
+    border-bottom: solid gray;
+}
+
+.calen {
+    display: flex;
+    margin-left: 18.75px;
+    margin-right: 18.75px;
+    margin-top: 15px;
+}
+
+.calen i {
+    margin-right: 6.25px;
+}
+
+.loc {
+    display: flex;
+    margin-left: 18.75px;
+    margin-right: 18.75px;
+    margin-top: 6.25px;
+}
+.loc i {
+    margin-right: 6.25px;
+}

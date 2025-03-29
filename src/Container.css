@@ -1,6 +1,9 @@
 .main-container {
-    
+    display: flex;
     z-index: 1;
     
    
+}
+.moveleft1{
+    padding-left: 20px;
 }
