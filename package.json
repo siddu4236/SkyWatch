@@ -5,8 +5,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeloy":"npm run build",
-    "deloy":"gh-pages -d build",
+    "predeloy": "npm run build",
+    "deloy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
