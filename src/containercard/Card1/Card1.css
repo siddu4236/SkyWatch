@@ -1,75 +1,153 @@
 .wholeCard1 {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 12.5px;
-    padding-right: 12.5px;
-    background: linear-gradient( to top , rgb(0, 0, 0, 0.15), rgb(255, 255, 255, 0.15));
-    border-radius: 12px;
-    backdrop-filter: blur(10px) ;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 12.5px;
+  padding-right: 12.5px;
+  background: linear-gradient(
+    to top,
+    rgb(0, 0, 0, 0.15),
+    rgb(255, 255, 255, 0.15)
+  );
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
 }
 
 .now {
-    height: 100px;
+  height: 100px;
 }
 
 .clouds {
-    display: flex;
+  display: flex;
 }
 
 .clouds img {
-    height: 87.5px;
+  height: 87.5px;
 }
 
 .now-now {
-    margin: 0;
-    padding-left: 18.75px;
+  margin: 0;
+  padding-left: 18.75px;
 }
 
 .clouds p {
-    display: flex;
-    margin: 0;
-    font-size: 62.5px;
-    align-items: center;
-    justify-content: center;
-    padding-left: 18.75px;
+  display: flex;
+  margin: 0;
+  font-size: 62.5px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 18.75px;
 }
 
 p span {
-    margin: 0;
-    font-size: 50px;
+  margin: 0;
+  font-size: 50px;
 }
 
-p img {
-    position: relative;
-    transform: translateY(-12.5px);
-    margin-right: 6.25px;
+.cloudy {
+  position: relative;
+  transform: translateY(-12.5px);
+  margin-right: 6.25px;
+}
+
+.temp {
+  margin-right: 2px;
+
+  transform: translateY(-2px);
 }
 
 .Type-weather {
-    height: 31.25px;
-    margin: 0;
-    margin-left: 18.75px;
-    margin-right: 18.75px;
-    border-bottom: solid gray;
+  height: 31.25px;
+  margin: 0;
+  
+  margin-left: 18.75px;
+  margin-right: 18.75px;
+  border-bottom: solid gray;
 }
 
 .calen {
-    display: flex;
-    margin-left: 18.75px;
-    margin-right: 18.75px;
-    margin-top: 15px;
+  display: flex;
+  margin-left: 18.75px;
+  margin-right: 18.75px;
+  margin-top: 15px;
 }
 
 .calen i {
-    margin-right: 6.25px;
+  margin-right: 6.25px;
 }
 
 .loc {
-    display: flex;
-    margin-left: 18.75px;
-    margin-right: 18.75px;
-    margin-top: 6.25px;
+  display: flex;
+  margin-left: 18.75px;
+  margin-right: 18.75px;
+  margin-top: 6.25px;
 }
 .loc i {
-    margin-right: 6.25px;
+  margin-right: 6.25px;
+}
+.calen span {
+  margin-left: 5px;
+}
+.loc span {
+  margin-left: 8px;
+}
+
+.hum-press{
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+
+.hum-press {
+  display: flex;
+  margin-left: 8px;
+}
+
+.humid {
+  display: flex;
+  padding-right: 5px;
+  
+  
+}
+.humid span {
+  margin-top: auto;
+  
+}
+
+.humidimg {
+  height: 60px;
+  transform: translateY(5px);
+}
+.pressure {
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: black;
+}
+.press{
+    transform: translateY(6px);
+    border-left:solid rgb(131, 131, 131) ;
+    
+}
+.heading{
+    display: flex;
+    position: absolute;
+    transform: translateY(-12px);
+    padding-left: 10.75px;
+    
+}
+.humidd{
+    padding-right: 39px;
+    border-right:solid rgb(131, 131, 131) ;
+}    
+.presss{
+    padding-left: 10px;
+}
+.humid span {
+  margin-top: auto;
+  font-size: 22px;
+}
+.press span {
+  margin-top: auto;
+  font-size: 22px;
+  margin-left: 10px;
 }
