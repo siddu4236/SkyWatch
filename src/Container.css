@@ -1,7 +1,8 @@
 .main-container {
     display: flex;
     z-index: 1;
-    
+    width: 1000px;
+    flex-wrap: wrap;
    
 }
 .moveleft1{

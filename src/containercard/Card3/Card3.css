@@ -1,0 +1,75 @@
+.wholeCard3 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.15),
+      rgba(255, 255, 255, 0.15)
+    );
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    position: relative;
+  }
+  
+  .days {
+    overflow-y: scroll;
+    max-height: 160px;
+    margin: 0 18.75px;
+    padding-right: 5px;
+    scrollbar-width: none;
+  }
+  .days::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .day-day {
+    margin: 0;
+    margin-left: 18.75px;
+    margin-right: 18.75px;
+    border-bottom: solid gray;
+  }
+  
+  .weather1 {
+    width: 40px;
+  }
+  
+  .day1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Floating scroll icon using FontAwesome */
+  .floating-scroll-hint {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    opacity: 0.9;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .scroll-arrow-icon {
+    font-size: 20px;
+    color: #444;
+    animation: floatIcon 2s ease-in-out infinite;
+    font-size: 50px;
+  }
+  
+  .floating-scroll-hint.hidden {
+    opacity: 0;
+  }
+  
+  @keyframes floatIcon {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  

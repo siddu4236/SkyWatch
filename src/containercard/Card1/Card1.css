@@ -10,6 +10,7 @@
   );
   border-radius: 12px;
   backdrop-filter: blur(10px);
+  
 }
 
 .now {
@@ -49,11 +50,11 @@ p span {
   margin-right: 6.25px;
 }
 
-.temp {
+/*.temp {
   margin-right: 2px;
 
   transform: translateY(-2px);
-}
+}*/
 
 .Type-weather {
   height: 31.25px;
@@ -90,7 +91,7 @@ p span {
 .loc span {
   margin-left: 8px;
 }
-
+/*
 .hum-press{
     margin-bottom: 15px;
     margin-top: 10px;
@@ -118,7 +119,7 @@ p span {
   transform: translateY(5px);
 }
 .pressure {
-  height: 40px;
+  height: 50px;
   margin-top: 10px;
   margin-left: 10px;
   color: black;
@@ -140,14 +141,19 @@ p span {
     border-right:solid rgb(131, 131, 131) ;
 }    
 .presss{
-    padding-left: 10px;
+    padding-left: 12px;
 }
 .humid span {
   margin-top: auto;
   font-size: 22px;
+  margin-right: 6px;
 }
 .press span {
   margin-top: auto;
   font-size: 22px;
   margin-left: 10px;
 }
+.press img{
+  margin-left:12px ;
+}
+*/
