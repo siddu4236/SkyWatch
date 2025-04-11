@@ -1,27 +1,67 @@
+// Top.jsx
 import { useState } from "react";
 import clearSky from "./clear-sky.png";
 import btn from "./globe.png";
 import "./Top.css";
 
+import {
+  getWeatherInfo,
+  getCitySuggestions,
+  getLocationFallback,
+  getCityFromCoords,
+} from "../services";
+
 export default function Top() {
   const [city, setSearch] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!city.trim()) return;
     console.log("Searching for:", city);
-    // Add API call or navigation logic here
-    getWeatherInfo(city);
+    await getWeatherInfo(city.trim());
+    setSuggestions([]);
   };
 
-  const API_URL = "https://api.openweathermap.org/data/2.5/weather";
-  const API_KEY = "2d9366fb3d321821ca32cab89c69fe42"; // Replace with your actual API key, ideally from an environment variable
+  const handleCurrentLocation = () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser.");
+      getLocationFallback().then((fallbackCity) => {
+        if (fallbackCity) {
+          setSearch(fallbackCity);
+          getWeatherInfo(fallbackCity);
+        }
+      });
+      return;
+    }
 
-  let getWeatherInfo = async (city) => {
-    let response = await fetch(
-      `${API_URL}?q=${city}&appid=${API_KEY}&units=metric`
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        const cityName = await getCityFromCoords(lat, lon);
+        if (cityName) {
+          setSearch(cityName);
+          getWeatherInfo(cityName);
+        } else {
+          alert("City not found for your location.");
+          const fallbackCity = await getLocationFallback();
+          if (fallbackCity) {
+            setSearch(fallbackCity);
+            getWeatherInfo(fallbackCity);
+          }
+        }
+      },
+      async (error) => {
+        alert(`Location Error (${error.code}): ${error.message}`);
+        const fallbackCity = await getLocationFallback();
+        if (fallbackCity) {
+          setSearch(fallbackCity);
+          getWeatherInfo(fallbackCity);
+        }
+      }
     );
-    let jsonResponse = await response.json();
-    console.log(jsonResponse);
   };
 
   return (
@@ -30,20 +70,46 @@ export default function Top() {
         <img src={clearSky} height={34} alt="Clear Sky" />
         <h1>SkyWatch</h1>
       </a>
-      <form className="searcher" onSubmit={handleSubmit}>
-        <input
-          className="inputer"
-          type="text"
-          placeholder="Search city"
-          value={city}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <button className="inputerBtn" type="submit">
-          <img src={btn} alt="Search" />
-        </button>
+
+      <form className="searcher" onSubmit={handleSubmit} autoComplete="off">
+        <div className="search-wrap">
+          <div className="search-inner">
+            <input
+              className="inputer"
+              type="text"
+              placeholder="Search city"
+              value={city}
+              onChange={(e) => {
+                const value = e.target.value;
+                setSearch(value);
+                getCitySuggestions(value).then(setSuggestions);
+              }}
+            />
+            <button className="inputerBtn" type="submit">
+              <img src={btn} alt="Search" />
+            </button>
+          </div>
+
+          {suggestions.length > 0 && (
+            <ul className="suggestion-list">
+              {suggestions.map((item, index) => (
+                <li
+                  key={index}
+                  onClick={() => {
+                    setSearch(item);
+                    setSuggestions([]);
+                    getWeatherInfo(item);
+                  }}
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </form>
 
-      <button className="currbtn">
+      <button className="currbtn" onClick={handleCurrentLocation}>
         <i className="fa-solid fa-location-crosshairs"></i> Current Location
       </button>
     </div>

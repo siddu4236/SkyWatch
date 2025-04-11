@@ -2,9 +2,8 @@ import "./Card3.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faLocationDot, faDownLong } from "@fortawesome/free-solid-svg-icons";
 import cloudy from "../gifs/cloudy.gif";
-import temp from "../gifs/temp2.gif";
-import humid from "../gifs/humidity.gif";
-import pressure from "../gifs/at2.png";
+
+
 import { useEffect, useRef, useState } from "react";
 
 

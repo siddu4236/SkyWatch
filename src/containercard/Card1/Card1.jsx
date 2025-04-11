@@ -2,13 +2,15 @@ import "./Card1.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import cloudy from "../gifs/cloudy.gif";
-import temp from "../gifs/temp2.gif";
-import humid from "../gifs/humidity.gif";
-import pressure from "../gifs/at2.png";
-import Card3 from "../Card3/Card3";
+
+
+
 
 
 export default function Card1() {
+  
+  
+  
   return (
     <div className="hloo">
     <div style={{height:"240px"}} className="wholeCard1">

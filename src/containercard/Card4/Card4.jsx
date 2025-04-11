@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightLong } from "@fortawesome/free-solid-svg-icons";
 
+
 export default function Card2() {
   const scrollRef = useRef(null);
   const [showHint, setShowHint] = useState(true);

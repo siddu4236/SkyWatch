@@ -8,6 +8,8 @@ import { width } from "@fortawesome/free-solid-svg-icons/fa0";
 import temp from "../gifs/temp2.gif";
 import vision from "../gifs/vision-unscreen.gif";
 
+
+
 export default function Card2() {
   return (
     <div className="wholeCard2">
