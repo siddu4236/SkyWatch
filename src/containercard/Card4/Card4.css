@@ -1,0 +1,90 @@
+.wholeCard4 {
+    width: 700px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    background: linear-gradient(
+      to top,
+      rgb(0, 0, 0, 0.15),
+      rgb(255, 255, 255, 0.15)
+    );
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    position: relative; /* required for hint positioning */
+  }
+  
+  .dailyCards {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  .dailyCards::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  .daily1 {
+    min-width: 100px;
+    flex-shrink: 0;
+    background: linear-gradient(
+      to top,
+      rgb(0, 0, 0, 0.15),
+      rgba(4, 0, 0, 0.15)
+    );
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  
+  .timing {
+    margin: 0;
+  }
+  
+  .time-temp {
+    margin: 0;
+  }
+  
+  .wind-info {
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  /* 🔽 New: Floating scroll-hint icon for sideways scroll */
+  .scroll-hint-x {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 10;
+    opacity: 0.85;
+    pointer-events: none;
+    animation: floatX 2s ease-in-out infinite;
+    transition: opacity 0.3s ease;
+  }
+  
+  .scroll-x-icon {
+    font-size: 40px;
+    color: #333;
+    padding-top: 30px;
+  }
+  
+  .scroll-hint-x.hidden {
+    opacity: 0;
+  }
+  
+  @keyframes floatX {
+    0%, 100% {
+      transform: translateY(-50%) translateX(0);
+    }
+    50% {
+      transform: translateY(-50%) translateX(-8px);
+    }
+  }
+  

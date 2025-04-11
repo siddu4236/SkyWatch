@@ -5,14 +5,11 @@ import Container from './Container';
 import Top from './topsection/Top';
 
 function App() {
- 
-  
-
   return (
     <div className="core">
-      <Top/>
-      <Bg/>
-      <Container/>
+      <Top />
+      <Bg />
+      <Container />
     </div>
   );
 }

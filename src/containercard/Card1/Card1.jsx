@@ -37,7 +37,7 @@ export default function Card1() {
       
     </div>
 
-    <Card3/>
+  
 
 
     </div>

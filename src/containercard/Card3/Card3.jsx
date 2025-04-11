@@ -7,6 +7,8 @@ import humid from "../gifs/humidity.gif";
 import pressure from "../gifs/at2.png";
 import { useEffect, useRef, useState } from "react";
 
+
+
 export default function Card1() {
   const scrollContainerRef = useRef(null);
   const [showHint, setShowHint] = useState(true);
@@ -31,10 +33,11 @@ export default function Card1() {
   }, []);
 
   return (
-    <div
+    <div className="hlloo">
+      <div
       style={{
         position: "relative",
-        height: "240px",
+        height: "257px",
         marginTop: "20px",
         width: "250px",
       }}
@@ -116,6 +119,12 @@ export default function Card1() {
           </div>
 
       </div>
+    </div>
+
+
+    
+
+
     </div>
   );
 }
