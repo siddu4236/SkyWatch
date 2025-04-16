@@ -8,9 +8,6 @@ import cloudy from "../gifs/cloudy.gif";
 
 
 export default function Card1() {
-  
-  
-  
   return (
     <div className="hloo">
     <div style={{height:"240px"}} className="wholeCard1">
