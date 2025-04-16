@@ -7,7 +7,8 @@ import cloudy from "../gifs/cloudy.gif";
 
 
 
-export default function Card1() {
+export default function Card1(main) {
+  console.log(main.temp)
   return (
     <div className="hloo">
     <div style={{height:"240px"}} className="wholeCard1">
@@ -15,8 +16,7 @@ export default function Card1() {
         <p className="now-now">Now</p>
         <div className="clouds">
           <p>
-            
-            20<span>&#8451;</span>
+          {main?.temp ? main.temp : 20}<span>&#8451;</span>
             <img className="cloudy" src={cloudy} alt="Cloudy Weather" />
           </p>
         </div>

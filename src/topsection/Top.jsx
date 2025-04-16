@@ -1,5 +1,3 @@
-// Top.jsx
-import { useState } from "react";
 import clearSky from "./clear-sky.png";
 import btn from "./globe.png";
 import "./Top.css";
@@ -9,18 +7,29 @@ import {
   getCitySuggestions,
   getLocationFallback,
   getCityFromCoords,
-} from "../services";
+} from "../services"; // adjust path if needed
 
-export default function Top() {
-  const [city, setSearch] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
+export default function Top({
+  city,
+  setCity,
+  suggestions,
+  setSuggestions,
+  handleSubmit,
+}) {
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setCity(value);
+    if (value.trim()) {
+      getCitySuggestions(value).then(setSuggestions);
+    } else {
+      setSuggestions([]);
+    }
+  };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (!city.trim()) return;
-    console.log("Searching for:", city);
-    await getWeatherInfo(city.trim());
+  const handleSuggestionClick = (suggestion) => {
+    setCity(suggestion);
     setSuggestions([]);
+    getWeatherInfo(suggestion);
   };
 
   const handleCurrentLocation = () => {
@@ -28,7 +37,7 @@ export default function Top() {
       alert("Geolocation is not supported by your browser.");
       getLocationFallback().then((fallbackCity) => {
         if (fallbackCity) {
-          setSearch(fallbackCity);
+          setCity(fallbackCity);
           getWeatherInfo(fallbackCity);
         }
       });
@@ -36,19 +45,15 @@ export default function Top() {
     }
 
     navigator.geolocation.getCurrentPosition(
-      async (position) => {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-
+      async ({ coords: { latitude: lat, longitude: lon } }) => {
         const cityName = await getCityFromCoords(lat, lon);
         if (cityName) {
-          setSearch(cityName);
+          setCity(cityName);
           getWeatherInfo(cityName);
         } else {
-          alert("City not found for your location.");
           const fallbackCity = await getLocationFallback();
           if (fallbackCity) {
-            setSearch(fallbackCity);
+            setCity(fallbackCity);
             getWeatherInfo(fallbackCity);
           }
         }
@@ -57,7 +62,7 @@ export default function Top() {
         alert(`Location Error (${error.code}): ${error.message}`);
         const fallbackCity = await getLocationFallback();
         if (fallbackCity) {
-          setSearch(fallbackCity);
+          setCity(fallbackCity);
           getWeatherInfo(fallbackCity);
         }
       }
@@ -79,11 +84,7 @@ export default function Top() {
               type="text"
               placeholder="Search city"
               value={city}
-              onChange={(e) => {
-                const value = e.target.value;
-                setSearch(value);
-                getCitySuggestions(value).then(setSuggestions);
-              }}
+              onChange={handleInputChange}
             />
             <button className="inputerBtn" type="submit">
               <img src={btn} alt="Search" />
@@ -93,14 +94,7 @@ export default function Top() {
           {suggestions.length > 0 && (
             <ul className="suggestion-list">
               {suggestions.map((item, index) => (
-                <li
-                  key={index}
-                  onClick={() => {
-                    setSearch(item);
-                    setSuggestions([]);
-                    getWeatherInfo(item);
-                  }}
-                >
+                <li key={index} onClick={() => handleSuggestionClick(item)}>
                   {item}
                 </li>
               ))}
